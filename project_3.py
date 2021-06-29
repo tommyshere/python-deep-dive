@@ -1,6 +1,7 @@
 from collections import namedtuple
 from datetime import datetime
 from functools import partial
+
 file_name = "nyc_parking_tickets_extract.csv"
 
 with open(file_name) as f:
@@ -83,7 +84,7 @@ def violation_count_by_make():
 
     # .items() create a tuple like so (key, value)
     return {make: cnt
-                for make, cnt in sorted(makes_counts.items(),
-                                        key=lambda t: t[1],
-                                        reverse=True)
+            for make, cnt in sorted(makes_counts.items(),
+                                    key=lambda t: t[1],
+                                    reverse=True)
             }
